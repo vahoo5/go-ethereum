@@ -617,6 +617,11 @@ web3._extend({
 			params: 4,
 			inputFormatter: [web3._extend.formatters.inputCallFormatter, web3._extend.formatters.inputDefaultBlockNumberFormatter, null, null],
 		}),
+		new web3._extend.Method({
+			name: 'getBlockReceipts',
+			call: 'eth_getBlockReceipts',
+			params: 1,
+		}),
 	],
 	properties: [
 		new web3._extend.Property({
@@ -645,20 +650,6 @@ web3._extend({
 	property: 'miner',
 	methods: [
 		new web3._extend.Method({
-			name: 'start',
-			call: 'miner_start',
-		}),
-		new web3._extend.Method({
-			name: 'stop',
-			call: 'miner_stop'
-		}),
-		new web3._extend.Method({
-			name: 'setEtherbase',
-			call: 'miner_setEtherbase',
-			params: 1,
-			inputFormatter: [web3._extend.formatters.inputAddressFormatter]
-		}),
-		new web3._extend.Method({
 			name: 'setExtra',
 			call: 'miner_setExtra',
 			params: 1
@@ -674,15 +665,6 @@ web3._extend({
 			call: 'miner_setGasLimit',
 			params: 1,
 			inputFormatter: [web3._extend.utils.fromDecimal]
-		}),
-		new web3._extend.Method({
-			name: 'setRecommitInterval',
-			call: 'miner_setRecommitInterval',
-			params: 1,
-		}),
-		new web3._extend.Method({
-			name: 'getHashrate',
-			call: 'miner_getHashrate'
 		}),
 	],
 	properties: []
